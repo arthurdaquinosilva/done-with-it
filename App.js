@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
@@ -10,14 +17,33 @@ export default function App() {
           source={require("./assets/icon.png")}
           style={{ width: 80, height: 80 }}
         />
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-          resizeMode="cover"
-        />
+        <TouchableWithoutFeedback onPress={() => console.log("Image tapped")}>
+          <Image
+            source={{
+              width: 100,
+              height: 100,
+              uri: "https://picsum.photos/100",
+            }}
+          />
+        </TouchableWithoutFeedback>
+        <TouchableOpacity onPress={() => console.log("Image tapped")}>
+          <Image
+            source={{
+              width: 100,
+              height: 100,
+              uri: "https://picsum.photos/100",
+            }}
+          />
+        </TouchableOpacity>
+        <TouchableHighlight onPress={() => console.log("Image tapped")}>
+          <Image
+            source={{
+              width: 100,
+              height: 100,
+              uri: "https://picsum.photos/100",
+            }}
+          />
+        </TouchableHighlight>
       </SafeAreaView>
     </SafeAreaProvider>
   );
