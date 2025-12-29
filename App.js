@@ -30,10 +30,13 @@ export default function App() {
   );
 }
 
+// using 'StyleSheet.create' instead of using
+// a plain object is useful because the properts
+// passed to the create method are validated
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "pink",
     justifyContent: "center",
     alignItems: "center",
   },
